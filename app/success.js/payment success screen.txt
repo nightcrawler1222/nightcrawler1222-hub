@@ -1,0 +1,14 @@
+export default function Success() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
+      <h1 className="text-3xl font-bold">✅ Payment Successful!</h1>
+      <p className="mt-4">You've unlocked private time with nightcrawler1222.</p>
+      <a
+        href="/chat/abc123"
+        className="mt-6 bg-green-600 hover:bg-green-700 px-6 py-3 rounded font-bold transition"
+      >
+        Enter Encrypted Chat Room
+      </a>
+    </div>
+  );
+}

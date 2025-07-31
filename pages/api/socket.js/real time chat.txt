@@ -1,0 +1,15 @@
+import { Server } from 'socket.io';
+
+const io = new Server();
+
+io.on('connection', (socket) => {
+  socket.on('join', ({ roomId }) => socket.join(roomId));
+  socket.on('message', (data) => socket.to(data.roomId).emit('message', data));
+});
+
+export const config = { api: { bodyParser: false } };
+export default function handler(_, res) {
+  if (res.socket.server.io) return res.end();
+  res.socket.server.io = io;
+  res.end();
+}

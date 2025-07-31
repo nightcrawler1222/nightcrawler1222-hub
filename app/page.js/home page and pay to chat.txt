@@ -1,0 +1,73 @@
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white">
+      <header className="py-16 text-center">
+        <h1 className="text-5xl font-bold">nightcrawler1222</h1>
+        <p className="mt-4 text-xl text-gray-300">Creator • Streamer • YouTuber</p>
+      </header>
+
+      <section className="px-8 py-12">
+        <h2 className="text-3xl font-semibold text-center mb-8">My Content</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div>
+            <h3 className="text-xl mb-4">YouTube</h3>
+            <iframe
+              width="100%"
+              height="200"
+              src="https://www.youtube.com/embed?listType=user_uploads&list=nightcrawler1222"
+              title="YouTube"
+              className="rounded shadow-lg"
+            ></iframe>
+          </div>
+          <div>
+            <h3 className="text-xl mb-4">Instagram</h3>
+            <a href="https://instagram.com/nightcrawler1222" target="_blank" rel="noreferrer">
+              <img src="https://via.placeholder.com/300x300?text=Instagram+%40nightcrawler1222" alt="IG" className="rounded shadow-lg" />
+            </a>
+          </div>
+          <div>
+            <h3 className="text-xl mb-4">TikTok</h3>
+            <a href="https://tiktok.com/@nightcrawler1222" target="_blank" rel="noreferrer">
+              <img src="https://via.placeholder.com/300x300?text=TikTok+%40nightcrawler1222" alt="TT" className="rounded shadow-lg" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-800">
+        <div className="text-center max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-6">Want to Talk?</h2>
+          <p className="text-lg text-gray-300 mb-8">
+            Pay to unlock private, encrypted 1-on-1 time with me.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <form action="/api/checkout" method="POST">
+              <input type="hidden" name="amount" value="1" />
+              <button
+                type="submit"
+                className="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-bold text-lg transition"
+              >
+                $1 — 5 Minutes
+              </button>
+            </form>
+
+            <form action="/api/checkout" method="POST">
+              <input type="hidden" name="amount" value="10" />
+              <button
+                type="submit"
+                className="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg font-bold text-lg transition"
+              >
+                $10 — 20 Minutes
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-8 text-center text-gray-400">
+        &copy; {new Date().getFullYear()} nightcrawler1222. All rights reserved.
+      </footer>
+    </div>
+  );
+}
